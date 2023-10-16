@@ -29,8 +29,9 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 10rem;
-    padding: 3rem 10vw;
+    height: 9rem;
+    margin-top: 2rem;
+    padding: 2.5rem 10vw;
     & .navbar-logo {
       width: 10%;
       padding: 1rem 0;
@@ -44,20 +45,20 @@ export default {
       justify-content: flex-end;
       & .element {
         text-decoration: none;
-        color: var(--very-dark-blue);
+        color: var(--dark-grayish-blue);
         transition: all .3s;
       }
       & .element:not(:first-child)  {
         margin-left: 3vw;
       }
       & .element:hover {
-        color: var(--soft-orange);
+        color: var(--soft-red);
       }
     }
   }
 
   .page-container {
     height: 80%;
-    padding: 3rem 10vw;
+    padding: 0rem 10vw;
   }
 </style>
