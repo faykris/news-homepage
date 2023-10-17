@@ -3,14 +3,14 @@
 </template>
 
 <script>
-import NavBar from './modules/navbar-section.vue'
+  import NavBar from './modules/navbar-section.vue';
 
-export default {
-  name: 'App',
-  components: {
-    NavBar
+  export default {
+    name: 'App',
+    components: {
+      NavBar,
+    }
   }
-}
 </script>
 
 <style lang="scss">

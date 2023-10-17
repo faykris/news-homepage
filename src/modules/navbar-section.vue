@@ -30,13 +30,15 @@
   </div>
   <div class="page-container">
     <router-view></router-view>
-  </div>  
+  </div>
+  <FooterSection></FooterSection>
 </template>
 
 <script>
+import FooterSection from './footer-section.vue';
 export default {
-    props: {
-
+    components: {
+      FooterSection
     },
     data() {
       return {
