@@ -190,18 +190,19 @@ export default {
       width: 100%;
       display: flex;
       justify-content: space-between;
+      margin-bottom: 5rem;
       .element {
         width: 30%;
         display: flex;
         justify-content: space-between;
         .image {
-          width: 25%;
+          width: 28%;
           img {
             width: 100%;
           }
         }
         .description {
-          width: 70%;
+          width: 67%;
           h2 {
             color: var(--grayish-blue);
             margin-bottom: .4rem;

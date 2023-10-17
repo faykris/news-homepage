@@ -1,9 +1,23 @@
 <template>
+  <div v-if="!isSidebar" class="sidebar-shadow">
+    <div class="sidebar">
+      <div @click="sidebarActivate" class="close-icon">
+        <img src="@/assets/images/icon-menu-close.svg" alt="Menu Close">
+      </div>
+      <div class="sidebar-list">
+        <router-link class="element" to="/" @click="sidebarActivate">Home</router-link>
+        <router-link class="element" to="/new" @click="sidebarActivate">New</router-link>   
+        <router-link class="element" to="/popular" @click="sidebarActivate">Popular</router-link>   
+        <router-link class="element" to="/trending" @click="sidebarActivate">Trending</router-link>   
+        <router-link class="element" to="/categories" @click="sidebarActivate">Categories</router-link> 
+      </div>
+    </div>
+  </div>
   <div class="navbar">
     <div class="navbar-logo">
       <img src="@/assets/images/logo.svg" alt="Logo" />
     </div>
-    <div class="mobile-menu">
+    <div @click="sidebarActivate" class="mobile-menu">
       <img src="@/assets/images/icon-menu.svg" alt="Icon Menu" />
     </div>
     <div class="navbar-list">
@@ -22,12 +36,62 @@
 <script>
 export default {
     props: {
-        // name: 'Navbar'
+
+    },
+    data() {
+      return {
+        isSidebar: {
+          type: Boolean,
+          default: false,
+        }
+      }
+    },
+    methods: {
+      sidebarActivate() {
+        this.isSidebar = !this.isSidebar;
+      }
     }
 }
 </script>
 
 <style lang="scss" scoped>
+  .sidebar-shadow {
+    position: fixed;
+    z-index: 1;
+    display: none;
+    background-color: hsl(240, 100%, 5%, .5);
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: flex-end;
+    .sidebar {
+      background-color: var(--off-white);
+      padding: 1.7rem;
+      width: 67%;
+      height: 100%;
+      .close-icon {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 2.3rem;
+      }
+      .sidebar-list {
+        padding: 2.4rem 0;
+        flex-wrap: wrap;
+        .element {
+          width: 100%;
+          display: block;
+          padding: .8rem 0;
+          text-decoration: none;
+          color: var(--very-dark-blue);
+          font-size: 18px;
+          letter-spacing: .5px;
+          &:hover {
+            color: var(--soft-red);
+          }
+        }
+      }
+    }
+  }
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -85,6 +149,9 @@ export default {
   }
 
   @media screen and (max-width: 480px) {
+    .sidebar-shadow {
+      display: flex;
+    }
     .navbar {
       display: flex;
       justify-content: space-between;
