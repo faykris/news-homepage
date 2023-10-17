@@ -49,6 +49,7 @@ export default {
       padding: 1rem 0;
       display: flex;
       justify-content: flex-end;
+      letter-spacing: .5px;
       & .element {
         text-decoration: none;
         color: var(--dark-grayish-blue);
@@ -67,8 +68,23 @@ export default {
     height: 80%;
     padding: 0 10vw;
   }
+  @media screen and (max-width: 1080px) and (min-width: 481px) {
+    .navbar {
+      margin-top: 0;
+      height: 8rem;
+      padding: 2rem 4vw;
+      & .navbar-list {
+        & .element:not(:first-child)  {
+        margin-left: 2vw;
+        }
+      }
+    }
+    .page-container {
+      padding: 0 4vw;
+    } 
+  }
 
-  @media screen and (max-width: 580px) {
+  @media screen and (max-width: 480px) {
     .navbar {
       display: flex;
       justify-content: space-between;

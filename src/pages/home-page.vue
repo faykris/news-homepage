@@ -115,11 +115,12 @@ export default {
         .description {
           color: var(--dark-grayish-blue);
           width: 48.5%;
-          font-size: 15px;
-          line-height: 1.3rem;
           padding-right: 1rem;
           & p {
             margin-bottom: 2rem;
+            font-size: 15px;
+            line-height: 1.3rem;
+            letter-spacing: .5px;
           }
           & button {
             border: none;
@@ -142,16 +143,16 @@ export default {
     & .aside {
       width: 32%;
       background-color: var(--very-dark-blue);
-      padding: 1.5rem;
+      padding: 1.6rem;
       height: fit-content;
 
       h1 {
+        width: 100%;
         color: var(--soft-orange);
       }
-
       .new {
         & {
-          padding: 1.5rem 0;
+          padding: 2rem 0;
         }
 
         &:last-child {
@@ -176,6 +177,7 @@ export default {
         & p {
           color: var(--grayish-blue);
           font-size: 15px;
+          letter-spacing: .5px;
           line-height: 1.5rem;
           opacity: .8;
         }
@@ -218,24 +220,82 @@ export default {
           p {
             color: var(--dark-grayish-blue);
             font-size: 15px;
-            line-height: 1.2rem;
+            letter-spacing: .5px;
+            line-height: 1.5rem;
           }
         }
       }
     }
   }
+  @media screen and (max-width: 1380px) and (min-width: 1081px) {
+    .news-list {
+      .element {
+        width: 33%;
+        .image {
+          width: 45%;
+          img {
+            width: 100%;
+          }
+        }
+        .description {
+          width: 52%;
+        }
+      }
+    }
+  }
 
-  @media screen and (max-width: 980px) {
+  @media screen and (max-width: 1080px) and (min-width: 481px) {
     .news-main {
       flex-wrap: wrap;
       & .article {
         width: auto;
+        & .container {
+          padding: 2rem 0;
+        }
+      }
+
+      & .aside {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: auto;
+
+        .new {
+          width: 31.5%;
+          padding: 0 .5rem 0 0;
+          margin-top: 1rem;
+          border-bottom: none !important;
+
+          &:not(:last-child) {
+            border-right: 1px solid var(--dark-grayish-blue);
+          }
+        }
       }
       
     }
+
+    .news-list {
+      margin-bottom: 5rem;
+      justify-content: space-around;
+      .element {
+        width: 27%;
+        flex-wrap: wrap;
+        .image {
+          width: 100%;
+        }
+        .description {
+          h2 {
+            margin-top: .5rem;
+            text-align: center;
+          }
+          width: 100%;
+        }
+      }
+    }
+    
   }
 
-  @media screen and (max-width: 580px) {
+  @media screen and (max-width: 480px) {
     .news-main {
       flex-wrap: wrap;
       & .article {
