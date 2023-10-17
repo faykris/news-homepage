@@ -1,15 +1,16 @@
 <template>
   <div class="news-main">
     <div class="article">
-      <img src="@/assets/images/image-web-3-desktop.jpg">
+      <img class="desktop-image" src="@/assets/images/image-web-3-desktop.jpg">
+      <img class="mobile-image" src="@/assets/images/image-web-3-mobile.jpg">
       <div class="container">
         <div class="title">
           <h1>The Bright Future of Web 3.0?</h1>
         </div>
         <div class="description">
           <p>
-            We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people
-            . But is it really fulfilling its promise?
+            We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+            But is it really fulfilling its promise?
           </p>
           <button>Read more</button>
         </div>
@@ -92,8 +93,11 @@ export default {
     margin-bottom: 2rem;
     & .article {
       width: 65%;
-      img {
+      & .desktop-image {
         width: 100%;
+      }
+      & .mobile-image {
+        display: none;
       }
       & .container {
         padding: 1rem 0 0 0;
@@ -139,6 +143,7 @@ export default {
       width: 32%;
       background-color: var(--very-dark-blue);
       padding: 1.5rem;
+      height: fit-content;
 
       h1 {
         color: var(--soft-orange);
@@ -148,6 +153,7 @@ export default {
         & {
           padding: 1.5rem 0;
         }
+
         &:last-child {
           padding-bottom: 0;
         }
@@ -197,15 +203,128 @@ export default {
           h2 {
             color: var(--grayish-blue);
             margin-bottom: .4rem;
+            font-size: 32px;
           }
           h4 {
             color: var(--very-dark-blue);
+            font-weight: 800;
             margin-bottom: .4rem;
+            transition: all .3s;
+            cursor: pointer;
+            &:hover {
+              color: var(--soft-red);
+            }
           }
           p {
             color: var(--dark-grayish-blue);
             font-size: 15px;
             line-height: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 980px) {
+    .news-main {
+      flex-wrap: wrap;
+      & .article {
+        width: auto;
+      }
+      
+    }
+  }
+
+  @media screen and (max-width: 580px) {
+    .news-main {
+      flex-wrap: wrap;
+      & .article {
+        width: auto;
+        & .desktop-image {
+          display: none;
+        }
+        & .mobile-image {
+          width: 100%;
+          display: block;
+        }
+
+        & .container {
+          flex-wrap: wrap;
+          padding-top: 1.5rem;
+          .title {
+            width: 100%;
+            h1 {
+              font-size: 40px;
+              line-height: 40px;
+              margin-bottom: 1.5rem;
+            }
+          }
+          .description {
+            width: 100%;
+            padding: 0 0 3rem 0;
+            p {
+              line-height: 25px;
+              font-size: 15px;
+              letter-spacing: .5px;
+              margin-bottom: 1.5rem;
+            }
+            button {
+              border: none;
+              background-color: var(--soft-red);
+              color: var(--off-white);
+              padding: .9rem 1.8rem;
+              text-transform: uppercase;
+              letter-spacing: 5px;
+              font-size: 15px;
+            }
+          }
+        }
+      }
+      & .aside {
+        width: 100%;
+        padding: 1.2rem;
+        .new {
+          padding: 1.8rem 0;
+          h3 {
+            font-size: 20px;
+            margin-bottom: .5rem;
+          }
+          p {
+            line-height: 25px;
+            font-size: 15px;
+            letter-spacing: .5px;
+            
+          }
+        }
+      }
+    }
+    .news-list {
+      padding: 1rem 0 3.5rem 0;
+      flex-wrap: wrap;
+      .element {
+        width: 100%;
+        padding: .8rem 0;
+        .image {
+          width: 27%;
+          img {
+            width: 100%;
+          }
+        }
+        .description {
+          width: 66%;
+          h2 {
+            margin-bottom: .3rem;
+          }
+          h4 {
+            font-size: 16px;
+            font-weight: 800;
+            margin-bottom: .3rem;
+          }
+          p {
+            color: var(--dark-grayish-blue);
+            line-height: 25px;
+            font-size: 15px;
+            letter-spacing: .5px;
           }
         }
       }

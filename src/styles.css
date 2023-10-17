@@ -16,5 +16,5 @@
 html, body, #app {
     background-color: var(--off-white);
     font-family: 'Inter', sans-serif;
-    height: 100%;
+    height: max-content;
 }

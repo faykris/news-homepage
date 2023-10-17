@@ -1,7 +1,10 @@
 <template>
   <div class="navbar">
     <div class="navbar-logo">
-      <img src="../assets/images/logo.svg" alt="Logo" />
+      <img src="@/assets/images/logo.svg" alt="Logo" />
+    </div>
+    <div class="mobile-menu">
+      <img src="@/assets/images/icon-menu.svg" alt="Icon Menu" />
     </div>
     <div class="navbar-list">
       <router-link class="element" to="/">Home</router-link>
@@ -38,6 +41,9 @@ export default {
       display: flex;
       justify-content: flex-start;
     }
+    .mobile-menu {
+      display: none;
+    }
     & .navbar-list {
       width: auto;
       padding: 1rem 0;
@@ -59,6 +65,31 @@ export default {
 
   .page-container {
     height: 80%;
-    padding: 0rem 10vw;
+    padding: 0 10vw;
+  }
+
+  @media screen and (max-width: 580px) {
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 5rem;
+      margin-top: 0;
+      padding: 3rem 4.8vw;
+      .navbar-logo {
+        img {
+          width: 13vw;
+        }
+      }
+      .mobile-menu {
+        display: block;
+      }
+      .navbar-list {
+        display: none;
+      }
+    }
+    .page-container {
+      padding: 0 4.8vw;
+    } 
   }
 </style>
